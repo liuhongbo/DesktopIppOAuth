@@ -9,7 +9,7 @@ QuickStart
 
 * Install Package from Nuget
 
-    Install-Package DesktopIppOAuth
+        Install-Package DesktopIppOAuth
 
 * Use it like this
 
