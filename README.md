@@ -4,7 +4,7 @@ DesktopIppOAuth
 A Libaray for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.  It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.
 
 
-QuickStart
+Quick Start
 ----------
 
 * Install Package from Nuget
@@ -27,7 +27,7 @@ QuickStart
     
         void _connector_IppOAuthResultEvent(string accessToken, string accessTokenSecret, string realmId, string dataSource)
         {
-            //save the token information somewher for later API call.
+            //save the token information somewhere for later API call.
         }
 
 Why DesktopIppOAuth
