@@ -22,7 +22,7 @@ QuickStart
         _connector = new OAuthConnector();
         _connector.IppOAuthResultEvent += _connector_IppOAuthResultEvent;
 
-	_connector.Connect(consumerKey, consumerSecret);
+	    _connector.Connect(consumerKey, consumerSecret);
 
     
         void _connector_IppOAuthResultEvent(string accessToken, string accessTokenSecret, string realmId, string dataSource)
@@ -32,6 +32,9 @@ QuickStart
 
 Why DesktopIppOAuth
 -------------------
+ 
+I asked a question on stackoverflow [here] (http://stackoverflow.com/questions/22329226/desktop-application-use-ipp-qbo-api-3-0) about how to do the oauth for my desktop application. 
 
+DesktopIppOAuth uses OWIN to self-host the Web API framework to redirect the callback to the library itself so the application can get the access token right away.
 
 
