@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DesktopIppOAuth</id>
+        <version>1.0.0.0</version>
+        <title>DesktopIppOAuth</title>
+        <authors>liuhongbo@live.com</authors>
+        <owners>liuhongbo@live.com</owners>
+        <licenseUrl>https://github.com/liuhongbo/DesktopIppOAuth</licenseUrl>
+        <projectUrl>https://github.com/liuhongbo/DesktopIppOAuth</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A Libaray for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.</description>
+        <summary>It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.</summary>
+        <copyright>Copyright ©  2014 liuhongbo@live.com</copyright>
+        <dependencies>
+            <dependency id="DevDefined.OAuth" version="0.1" />
+            <dependency id="Microsoft.AspNet.WebApi.OwinSelfHost" version="5.1.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="lib\net45\DesktopIppOAuth.dll" target="lib\net45\DesktopIppOAuth.dll" />
+    </files>
+</package>
