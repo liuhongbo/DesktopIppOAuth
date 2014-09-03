@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DesktopIppOAuth")]
-[assembly: AssemblyDescription("A Libaray for desktop application to get the OAuth Access Token for  Intuit Partner Platform (QuickBooks Online)  Rest APIs")]
+[assembly: AssemblyTitle("DesktopIppOAuth.NET40")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("liuhongbo@live.com")]
-[assembly: AssemblyProduct("DesktopIppOAuth")]
-[assembly: AssemblyCopyright("Copyright ©  2014 liuhongbo@live.com")]
-[assembly: AssemblyTrademark("DesktopIppOAuth")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("DesktopIppOAuth.NET40")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("382cfbdf-c6da-480c-944a-2ab4d9298673")]
+[assembly: Guid("737d86e3-9e8a-4021-aebb-d57500d3790e")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
+#if NET40
+using System.Web.Http.SelfHost;
+#else
 using Microsoft.Owin.Hosting;
+#endif
 
 namespace DesktopIppOAuth
 {
@@ -14,8 +14,11 @@ namespace DesktopIppOAuth
 
         public delegate void IppOAuthResultHandler(string accessToken, string accessTokenSecret, string realmId, string dataSource);
         public event IppOAuthResultHandler IppOAuthResultEvent;
-
+#if NET40
+        HttpSelfHostServer _webApp = null;
+#else
         IDisposable _webApp = null;
+#endif
         private string _defaultBaseAddress = @"http://localhost:65521/";
         private IToken _requestToken;
 
@@ -51,8 +54,13 @@ namespace DesktopIppOAuth
 
             Current = this;
 
+#if NET40
+            _webApp = new HttpSelfHostServer(Startup.Configuration(BaseAddress));
+            _webApp.OpenAsync().Wait();
+            
+#else
             _webApp = WebApp.Start<Startup>(url: BaseAddress);
-
+#endif
             IOAuthSession session = CreateSession();
             IToken theToken = session.GetRequestToken();
 
@@ -88,7 +96,9 @@ namespace DesktopIppOAuth
                 AccessTokenSecret = accessToken.TokenSecret;
 
                 IppOAuthResultEvent.Invoke(AccessToken, AccessTokenSecret, RealmId, DataSource);
-
+#if NET40
+                _webApp.CloseAsync().Wait();
+#endif
                 _webApp.Dispose();
                 _webApp = null;
             }

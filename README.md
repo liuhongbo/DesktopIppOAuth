@@ -1,7 +1,7 @@
 DesktopIppOAuth
 ==============
 
-A Libaray for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.  It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.
+A Library for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.  It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.
 
 
 Quick Start
@@ -15,7 +15,7 @@ Quick Start
 
         // OAuth consumer key and secret from OAuth provider
         private string consumerKey = "your consumer key";
-        private string consumerSecret = "you consumer secret";
+        private string consumerSecret = "your consumer secret";
         private DesktopIppOAuth.OAuthConnector _connector;
 
 

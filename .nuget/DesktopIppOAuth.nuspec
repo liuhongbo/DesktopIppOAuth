@@ -9,15 +9,16 @@
         <licenseUrl>https://github.com/liuhongbo/DesktopIppOAuth</licenseUrl>
         <projectUrl>https://github.com/liuhongbo/DesktopIppOAuth</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>A Libaray for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.</description>
-        <summary>It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.</summary>
+        <description>A Library for desktop application to get the OAuth Access Token for Intuit Partner Platform (QuickBooks Online) Rest APIs.</description>
+        <summary>It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implement a separated web site just for receiving the tokens.</summary>
         <copyright>Copyright ©  2014 liuhongbo@live.com</copyright>
         <dependencies>
             <dependency id="DevDefined.OAuth" version="0.1" />
             <dependency id="Microsoft.AspNet.WebApi.OwinSelfHost" version="5.1.1" />
         </dependencies>
+	<tags>Intuit IPP QuickBooks OAuth</tags>
     </metadata>
     <files>
-        <file src="bin\release\DesktopIppOAuth.dll" target="lib\net45\DesktopIppOAuth.dll" />
+        <file src="..\DesktopIppOAuth\bin\release\DesktopIppOAuth.dll" target="lib\net45\DesktopIppOAuth.dll" />
     </files>
 </package>
