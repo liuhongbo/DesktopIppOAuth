@@ -1,7 +1,7 @@
 DesktopIppOAuth
 ==============
 
-A Library for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs.  It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens.
+A Library for desktop application to get the OAuth Access Token of Intuit Partner Platform Rest APIs. The .Net 4.5 library uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implment a separated web site just for receiving the tokens. The .Net 4.0 library uses asp.net self host web api since OWIN only build on top of .NET 4.5.
 
 
 Quick Start
