@@ -44,7 +44,7 @@ namespace DesktopIppOAuthSample
             consumerKey = textBoxConsumerKey.Text;
             consumerSecret = textBoxConsumerKeySecret.Text;
 
-            _connector.Connect(consumerKey, consumerSecret);
+            _connector.Connect(consumerKey, consumerSecret, null, textBoxRedirectUrl.Text);
             
         }       
     }

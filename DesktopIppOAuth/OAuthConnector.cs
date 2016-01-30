@@ -1,6 +1,8 @@
 ﻿using System;
 using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
+using System.Threading.Tasks;
+using System.Threading;
 #if NET40
 using System.Web.Http.SelfHost;
 #else
@@ -27,6 +29,7 @@ namespace DesktopIppOAuth
         public string ConsumerKey { get; set; }
         public string ConsumerSecret { get; set; }
         public string BaseAddress { get; set; }
+        public string RedirectUrl { get; set; }
 
         // URLs for the OAuth provider
         private string _baseAuthUrl = "https://workplace.intuit.com/Connect/Begin";
@@ -43,15 +46,24 @@ namespace DesktopIppOAuth
         public void Connect(string consumerKey, string consumerSecret)
         {
             Connect(consumerKey, consumerSecret, _defaultBaseAddress);
-
         }
 
         public void Connect(string consumerKey, string consumerSecret, string baseAddress)
         {
+            Connect(consumerKey, consumerSecret, _defaultBaseAddress, null);
+        }
+
+        public void Connect(string consumerKey, string consumerSecret, string baseAddress, string redirectUrl)
+        {
             ConsumerKey = consumerKey;
             ConsumerSecret = consumerSecret;
-            BaseAddress = baseAddress;
+            BaseAddress = baseAddress?? _defaultBaseAddress;
+            RedirectUrl = redirectUrl;
 
+            if (Current != null)
+            {
+                Current.Clean();
+            }
             Current = this;
 
 #if NET40
@@ -97,15 +109,21 @@ namespace DesktopIppOAuth
 
                 IppOAuthResultEvent.Invoke(AccessToken, AccessTokenSecret, RealmId, DataSource);
 #if NET40
-                _webApp.CloseAsync().Wait();
-#endif
-                _webApp.Dispose();
-                _webApp = null;
+                ThreadPool.QueueUserWorkItem(new WaitCallback(delegate (object state)
+                {
+                    Thread.Sleep(2000);
+                    Clean();
+                }));
+#else
+                Task.Run(() => {
+                    Task.Delay(2000).Wait();
+                    Clean();
+                });
+#endif                
             }
             catch (Exception ex)
             {
-                _webApp.Dispose();
-                _webApp = null;
+                Clean();
                 throw ex;
             }
         }
@@ -114,9 +132,13 @@ namespace DesktopIppOAuth
         {
             if (_webApp != null)
             {
+#if NET40
+                _webApp.CloseAsync().Wait();
+#endif
                 _webApp.Dispose();
                 _webApp = null;
             }
+            Current = null;
         }
 
         private IOAuthSession CreateSession()

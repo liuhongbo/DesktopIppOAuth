@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DesktopIppOAuth</id>
-        <version>1.1.0.0</version>
+        <version>1.2.0.0</version>
         <title>DesktopIppOAuth</title>
         <authors>liuhongbo@live.com</authors>
         <owners>liuhongbo@live.com</owners>
@@ -11,8 +11,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A Library for desktop application to get the OAuth Access Token for Intuit Partner Platform (QuickBooks Online) Rest APIs.</description>
         <summary>It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implement a separated web site just for receiving the tokens.</summary>
-		<releaseNotes>add support of .net 4.0</releaseNotes>
-        <copyright>Copyright ©  2014 liuhongbo@live.com</copyright>
+		<releaseNotes>add support of redirect url</releaseNotes>
+        <copyright>Copyright ©  2016 liuhongbo@live.com</copyright>
         <dependencies>
 			<group targetFramework="net45">
 				<dependency id="DevDefined.OAuth" version="0.1" />
@@ -27,6 +27,7 @@
     </metadata>
     <files>
         <file src="..\DesktopIppOAuth\bin\release\DesktopIppOAuth.dll" target="lib\net45" />
-		<file src="..\DesktopIppOAuth.NET40\bin\release\DesktopIppOAuth.NET40.dll" target="lib\net40" />
+	<file src="..\DesktopIppOAuth.NET40\bin\release\DesktopIppOAuth.NET40.dll" target="lib\net40" />
+	<file src="..\DesktopIppOAuth\**\*.cs" target="src" />
     </files>
 </package>
