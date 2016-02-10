@@ -23,7 +23,10 @@ namespace DesktopIppOAuth
             if (string.IsNullOrEmpty(OAuthConnector.Current.RedirectUrl))
             {
                 var response = Request.CreateResponse(HttpStatusCode.OK, "text/html");
-                string content =
+                string content;
+                if (string.IsNullOrEmpty(OAuthConnector.Current.SuccessView))
+                {
+                    content =
 @"<!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +37,10 @@ namespace DesktopIppOAuth
 <p>You have authorized the application to connect to your QuickBooks online.</p>
 </body>
 </html>";
+                }
+                else {
+                    content = OAuthConnector.Current.SuccessView;
+                }              
                 response.Content = new StringContent(content, Encoding.UTF8, "text/html");
                 return response;
             }

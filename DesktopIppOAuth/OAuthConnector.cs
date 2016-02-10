@@ -30,6 +30,7 @@ namespace DesktopIppOAuth
         public string ConsumerSecret { get; set; }
         public string BaseAddress { get; set; }
         public string RedirectUrl { get; set; }
+        public string SuccessView { get; set; }
 
         // URLs for the OAuth provider
         private string _baseAuthUrl = "https://workplace.intuit.com/Connect/Begin";
