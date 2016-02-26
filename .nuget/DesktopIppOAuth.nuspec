@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DesktopIppOAuth</id>
-        <version>1.2.0.0</version>
+        <version>1.3.0.0</version>
         <title>DesktopIppOAuth</title>
         <authors>liuhongbo@live.com</authors>
         <owners>liuhongbo@live.com</owners>
@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A Library for desktop application to get the OAuth Access Token for Intuit Partner Platform (QuickBooks Online) Rest APIs.</description>
         <summary>It uses a OWIN selfhost web api 2.0 to receive the OAuth callback so that you don't need to implement a separated web site just for receiving the tokens.</summary>
-		<releaseNotes>add support of redirect url</releaseNotes>
+		<releaseNotes>add custom view support as alternative to redirect url</releaseNotes>
         <copyright>Copyright ©  2016 liuhongbo@live.com</copyright>
         <dependencies>
 			<group targetFramework="net45">
